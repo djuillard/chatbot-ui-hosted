@@ -87,32 +87,11 @@ supabase start
 
 ATTENDRE 5 MINUTES QUE LES CONTAINERS SOIENT TOUS LANCES
 
-### 4. Fill in Secrets
-
-#### 1. Environment Variables
-
-
-Get the required environment variables values by running:
+On sait que le service s'est lancé correctement lorsque la commande suivante ne renvoie pas de message d'erreur 
 
 ```bash
 supabase status
 ```
-
-Note: Use `API URL` from `supabase status` for `NEXT_PUBLIC_SUPABASE_URL`
-
-Now go to your `.env.local` file and fill in the values.
-
-If the environment variable is set, it will disable the input in the user settings.
-
-#### 2. SQL Setup
-
-In the 1st migration file `supabase/migrations/20240108234540_setup.sql` you will need to replace 2 values with the values you got above:
-
-- `project_url` (line 53): `http://supabase_kong_chatbotui:8000` (default) can remain unchanged if you don't change your `project_id` in the `config.toml` file
-- `service_role_key` (line 54): You got this value from running `supabase status`
-
-This prevents issues with storage files not being deleted properly.
-
 
 
 ### 4. Setup Backend with Supabase
@@ -186,7 +165,7 @@ Your hosted database should now be set up!
 
 DISCARD THE CHANGES ON MIGRATION FILE
 
-### 3. Setup Frontend with Vercel
+### 5. Setup Frontend with Vercel
 
 Go to [Vercel](https://vercel.com/) and create a new project.
 
