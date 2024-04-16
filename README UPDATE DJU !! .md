@@ -182,17 +182,17 @@ AU PREMIER DEMARRAGE, IL FAUT SE CREER UN COMPTE -> un email sera envoyé (donc 
 
 ## Updating
 
-Sur le PC, 
+Pour faire une MaJ, il faut en fait MaJ le fork et cela mettra automatiquement à jour le repo sur Vercel.
 
-Sur Github, sur le fork du repo officiel chatbo-ui (ex pour moi https://github.com/djuillard/chatbot-ui-hosted) -> faire un "Syncfork" puis "update branch" (cela synchronisera le fork avec le repo officiel à jour, tout en conservant les qq commits ahead qui correspondent à ma MaJ du fichier Readme)
+Tout d'abord, sur Github, sur le fork du repo officiel chatbo-ui (ex pour moi https://github.com/djuillard/chatbot-ui-hosted) -> faire un "Sync fork" puis "update branch" (cela synchronisera le fork avec le repo officiel à jour, tout en conservant les qq commits ahead qui correspondent à ma MaJ du fichier Readme)
 
-Puis dans une fenêtre de terminal du folder local correspondant au fork du repo chatbot-ui (ex pour moi https://github.com/djuillard/chatbot-ui-hosted) -> tapez : 
+Puis sur le PC, dans une fenêtre de terminal du folder local correspondant au fork du repo chatbot-ui (ex pour moi https://github.com/djuillard/chatbot-ui-hosted), tapez : 
 
 ```bash
 npm run update
 ```
 
-Il y aura une erreur à la fin, mais c'est normal, car il n'y a pas de DB locale.
+le npm run update tire les dernières modif de la branche main via un git pull. Il y aura une erreur à la fin, mais c'est normal, car il n'y a pas de DB locale.
 
 Et parce qu'on a justement une hosted db sur Supabase, on va taper en plus :
 
