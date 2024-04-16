@@ -7,21 +7,6 @@ The open-source AI chat app for everyone.
 
 
 
-## Updating
-
-In your terminal at the root of your local Chatbot UI repository, run:
-
-```bash
-npm run update
-```
-
-If you run a hosted instance you'll also need to run:
-
-```bash
-npm run db-push
-```
-
-to apply the latest migrations to your live database.
 
 ## Hosted Instance on Supabase + Vercel
 
@@ -192,5 +177,33 @@ Click "Deploy" and wait for your frontend to deploy.
 Once deployed, you should be able to use your hosted instance of Chatbot UI via the URL Vercel gives you.
 
 AU PREMIER DEMARRAGE, IL FAUT SE CREER UN COMPTE -> un email sera envoyé (donc mettre un vrai email). Attention, au moment de confirmer l'email, cela renvoie vers un webhook avec token en "localhost:3000/code?=xxx" -> remplacer par "vercel-url/code?=xxx".
+
+
+
+## Updating
+
+Sur le PC, 
+
+Sur Github, sur le fork du repo officiel chatbo-ui (ex pour moi https://github.com/djuillard/chatbot-ui-hosted) -> faire un "Syncfork" puis "update branch" (cela synchronisera le fork avec le repo officiel à jour, tout en conservant les qq commits ahead qui correspondent à ma MaJ du fichier Readme)
+
+Puis dans une fenêtre de terminal du folder local correspondant au fork du repo chatbot-ui (ex pour moi https://github.com/djuillard/chatbot-ui-hosted) -> tapez : 
+
+```bash
+npm run update
+```
+
+Il y aura une erreur à la fin, mais c'est normal, car il n'y a pas de DB locale.
+
+Et parce qu'on a justement une hosted db sur Supabase, on va taper en plus :
+
+```bash
+npm run db-push
+```
+
+Et cela appliquera les dernières modifs à notre live database.
+
+
+Puis, cela devrait automatiquement mettre à jour le déploiement sur Vercel, et l'application sera mise à jour.
+
 
 
